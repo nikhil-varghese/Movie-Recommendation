@@ -25,7 +25,3 @@ def recommendation():
             return render_template('recommendation.html', movie=movie, recommendations=recommendations)
     else:
         return redirect(url_for('home'))
-
-
-if __name__ == "__main__":
-    app.run(debug=True)
