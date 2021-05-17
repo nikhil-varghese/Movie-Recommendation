@@ -69,6 +69,14 @@ body {
   background-color: #222;
 }
 
+footer {
+  position:absolute;
+  bottom:0;
+  width:100%;
+  height:60px;   /* Height of the footer */
+  background:#6cf;
+}
+
 [tabindex="-1"]:focus:not(:focus-visible) {
   outline: 0 !important;
 }
@@ -10092,39 +10100,10 @@ main {
   background: linear-gradient(135deg, rgba(154,57,163,1) 0%, rgba(65,103,168,1) 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#9a39a3', endColorstr='#4167a8', GradientType=1 );
 }
-/* h1 {
-  display: block;
-  margin: 0 auto 25px auto;
-  text-align: center;
-  font-size: 1.92em;
-  font-weight: 600;
-  letter-spacing: -0.055em;
-}
-h2 {
-  display: block;
-  margin: 0 auto 60px auto;
-  text-align: center;
-  font-weight: 400;
-  font-size: 1.25em;
-  letter-spacing: -0.015em;
-} */
-/* .container {
-  position: relative;
-  margin: calc(25px + 2vh + 2vw) auto 0 auto;
-  padding: 0;
-  width: 100%;
-  max-width: 840px;
-} */
-
 
 .row{
   margin-top: 50px;
 }
-/* .card-body{
-  margin-top: 50px;
-  background-color: #455A64;
-  border: 1px solid #fff;
-} */
 
 .search-form {
   position: relative;

@@ -1,52 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="" />
-        <meta name="author" content="" />
-        <title>Movie Recommender</title>
-        <!-- Favicon-->
-        <link rel="icon" type="image/x-icon" href="../assets/favicon.ico" />
-        <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="../css/styles.css" rel="stylesheet" />
+{% extends 'base.html' %}
 
-    </head>
-    <body>
-        <!-- Navigation -->
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <div class="container">
-                <a class="navbar-brand" href="#!">Movie Recommender</a>
-                <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button> -->
-                <div class="card-body">
-                    <div class="search-form active-blue ml-auto my-0">
-                     <form class="form-inline">
-                       <button class="search-button search-button-right" type="submit">
-                         <i class="fa fa-search search-text" aria-hidden="true"></i>
-                       </button>
-                       <input class="search-form-input text-white" type="search" placeholder="Enter movie name" aria-label="Search">
-                     </form>
-                   </div>
-               </div>
-                <!-- <div class="collapse navbar-collapse" id="navbarResponsive">
-                    <ul class="navbar-nav ml-auto">
-                        <li class="nav-item active">
-                            <a class="nav-link" href="#!">
-                                Home
-                                <span class="sr-only">(current)</span>
-                            </a>
-                        </li>
-                        <li class="nav-item"><a class="nav-link" href="#!">About</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#!">Services</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#!">Contact</a></li>
-                    </ul>
-                </div> -->
-            </div>
-        </nav>
+{% block head %}
+
+{% endblock %}
+
+{% block body %}
+
         <!-- Page Content-->
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
+                    <div class="card-body">
+                        <div class="search-form active-blue ml-auto my-0">
+                            <form class="form-inline" action={{ url_for('recommendation', q=name)}}  method='POST'>
+                                <input class="search-form-input text-white" id="movie_name" name="q" type="text" placeholder="Enter movie name to get recommendations" aria-label="Search">
+                                <button class="search-button" type="submit" value="submit">
+                                    <i class="fa fa-search search-text" aria-hidden="true"></i>
+                                </button>
+                            </form>
+                        </div>
+                    </div>
                     <div class="carousel slide my-4" id="carouselExampleIndicators" data-ride="carousel">
                         <ol class="carousel-indicators">
                             <li class="active" data-target="#carouselExampleIndicators" data-slide-to="0"></li>
@@ -54,9 +27,9 @@
                             <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
                         </ol>
                         <div class="carousel-inner" role="listbox">
-                            <div class="carousel-item active"><img class="d-block img-fluid" src="../assets/images/joker.jpg" alt="First slide" /></div>
-                            <div class="carousel-item"><img class="d-block img-fluid" src="../assets/images/jumaji.jpg" alt="Second slide" /></div>
-                            <div class="carousel-item"><img class="d-block img-fluid" src="../assets/images/dunkirk.jpg" alt="Third slide" /></div>
+                            <div class="carousel-item active"><img class="d-block img-fluid" src="../static/assets/images/joker.jpg" alt="First slide" /></div>
+                            <div class="carousel-item"><img class="d-block img-fluid" src="../static/assets/images/jumaji.jpg" alt="Second slide" /></div>
+                            <div class="carousel-item"><img class="d-block img-fluid" src="../static/assets/images/dunkirk.jpg" alt="Third slide" /></div>
                         </div>
                         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -73,7 +46,7 @@
                     <div class="row">
                         <div class="col-lg-3 col-md-6 mb-4">
                             <div class="card h-100">
-                                <a href="#!"><img class="card-img-top" src="../assets/images/shawshank.jpg" alt="..." /></a>
+                                <a href="#!"><img class="card-img-top" src="../static/assets/images/shawshank.jpg" alt="..." /></a>
                                 <div class="card-body">
                                     <h4 class="card-title"><a href="#!">The Shawshank Redemption</a></h4>
                                   </div>
@@ -82,7 +55,7 @@
                         </div>
                         <div class="col-lg-3 col-md-6 mb-4">
                             <div class="card h-100">
-                                <a href="#!"><img class="card-img-top" src="../assets/images/godfather.jpeg" alt="..." /></a>
+                                <a href="#!"><img class="card-img-top" src="../static/assets/images/godfather.jpeg" alt="..." /></a>
                                 <div class="card-body">
                                     <h4 class="card-title"><a href="#!">The Godfather</a></h4>
                                 </div>
@@ -91,7 +64,7 @@
                         </div>
                         <div class="col-lg-3 col-md-6 mb-4">
                             <div class="card h-100">
-                                <a href="#!"><img class="card-img-top" src="../assets/images/fight_club.jpg" alt="..." /></a>
+                                <a href="#!"><img class="card-img-top" src="../static/assets/images/fight_club.jpg" alt="..." /></a>
                                 <div class="card-body">
                                     <h4 class="card-title"><a href="#!">Fight Club</a></h4>
                                 </div>
@@ -100,7 +73,7 @@
                         </div>
                         <div class="col-lg-3 col-md-6 mb-4">
                             <div class="card h-100">
-                                <a href="#!"><img class="card-img-top" src="../assets/images/usual_suspects.jpg" alt="..." /></a>
+                                <a href="#!"><img class="card-img-top" src="../static/assets/images/usual_suspects.jpg" alt="..." /></a>
                                 <div class="card-body">
                                     <h4 class="card-title"><a href="#!">The Usual Suspects</a></h4>
                                 </div>
@@ -109,7 +82,7 @@
                         </div>
                         <div class="col-lg-3 col-md-6 mb-4">
                             <div class="card h-100">
-                                <a href="#!"><img class="card-img-top" src="../assets/images/star_wars_4.jpg" alt="..." /></a>
+                                <a href="#!"><img class="card-img-top" src="../static/assets/images/star_wars_4.jpg" alt="..." /></a>
                                 <div class="card-body">
                                     <h4 class="card-title"><a href="#!">Star Wars: Episode IV - A New Hope</a></h4>
                                 </div>
@@ -118,7 +91,7 @@
                         </div>
                         <div class="col-lg-3 col-md-6 mb-4">
                             <div class="card h-100">
-                                <a href="#!"><img class="card-img-top" src="../assets/images/schindlers_list.jpeg" alt="..." /></a>
+                                <a href="#!"><img class="card-img-top" src="../static/assets/images/schindlers_list.jpeg" alt="..." /></a>
                                 <div class="card-body">
                                     <h4 class="card-title"><a href="#!">Schindler's List</a></h4>
                                 </div>
@@ -127,7 +100,7 @@
                         </div>
                         <div class="col-lg-3 col-md-6 mb-4">
                             <div class="card h-100">
-                                <a href="#!"><img class="card-img-top" src="../assets/images/star_wars_5.jpg" alt="..." /></a>
+                                <a href="#!"><img class="card-img-top" src="../static/assets/images/star_wars_5.jpg" alt="..." /></a>
                                 <div class="card-body">
                                     <h4 class="card-title"><a href="#!">Star Wars: Episode V - Empire Strikes Back</a></h4>
                                 </div>
@@ -136,7 +109,7 @@
                         </div>
                         <div class="col-lg-3 col-md-6 mb-4">
                             <div class="card h-100">
-                                <a href="#!"><img class="card-img-top" src="../assets/images/raiders.jpeg" alt="..." /></a>
+                                <a href="#!"><img class="card-img-top" src="../static/assets/images/raiders.jpeg" alt="..." /></a>
                                 <div class="card-body">
                                     <h4 class="card-title"><a href="#!">Raiders of the Lost Ark</a></h4>
                                 </div>
@@ -147,14 +120,5 @@
                 </div>
             </div>
         </div>
-        <!-- Footer-->
-        <footer class="py-5 bg-dark">
-            <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Movie Recommender 2021</p></div>
-        </footer>
-        <!-- Bootstrap core JS-->
-        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- Core theme JS-->
-        <script src="js/scripts.js"></script>
-    </body>
-</html>
+
+{% endblock %}
