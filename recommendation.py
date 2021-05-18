@@ -15,7 +15,7 @@ def movieRecommender(movie_name):
                                         n_neighbors=11)
     
     movie = movie_features.index[indices.flatten()[0]]
-    for i in range(1, 10):
+    for i in range(1, 9):
         recommendations.append(movie_features.index[indices.flatten()[i]])
         
     return movie, recommendations

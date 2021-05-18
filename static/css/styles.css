@@ -10113,7 +10113,7 @@ main {
 
 .search-form .search-form-input {
   height: auto;
-  width: 90%;
+  width: 100%;
   margin: 0 0 .5rem 10;
   padding: .6rem 0 .4rem 0;
   padding-left: 25px;
