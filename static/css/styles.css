@@ -41,18 +41,18 @@
   --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
-*,
+/* *,
 *::before,
 *::after {
   box-sizing: border-box;
-}
+} */
 
-html {
+/* html {
   font-family: sans-serif;
   line-height: 1.15;
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-}
+} */
 
 article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
   display: block;
@@ -10152,18 +10152,6 @@ main {
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
-}
-
-.active-white input[type=search]:focus:not([readonly]) {
-  border-bottom: 1px solid #fff;
-  box-shadow: 0 1px 0 0 #fff;
-  color: #fff;
-}
-
-.active-pink input[type=search]:focus:not([readonly]) {
-  border-bottom: 1px solid #F48FB1;
-  box-shadow: 0 1px 0 0 #F48FB1;
-  color: #fff;
 }
 
 .active-blue input[type=search]:focus:not([readonly]) {
