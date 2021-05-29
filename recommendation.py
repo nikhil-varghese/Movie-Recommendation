@@ -1,11 +1,19 @@
 import pickle
 import numpy as np
+from fuzzywuzzy import process
 
 model = pickle.load(open("model.pkl", "rb"))
 movie_features = pickle.load(open("movie_features.pkl", "rb"))
 
+def movieSearch(query):
+    result = process.extract(query, movie_features.index.tolist())
+    matches = [x[0] for x in result]
+    return matches
+
+
 def movieRecommender(movie_name):
-    movie_row = movie_features[movie_features.index.str.contains(movie_name)]
+    movie = process.extractOne(movie_name, movie_features.index)[0]
+    movie_row = movie_features[movie_features.index == movie]
     query_index = np.random.choice(movie_features.shape[0])
     print(f"Index to search: {query_index}")
     recommendations = []
