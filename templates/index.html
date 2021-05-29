@@ -31,81 +31,38 @@
                         </a>
                     </div> -->
                     <div class="row my-4">
+                        <h2>Most Popular Movies</h2>
+                    </div>
+                    <div class="row">
+                        {% for movie in popular_movies %}
+                        <div class="col-lg-3 col-md-6 mb-4">
+                            <div class="card h-100">
+                                <!-- <a href="#!"><img class="card-img-top" src="../static/assets/images/shawshank.jpg" alt="..." /></a> -->
+                                <div class="card-body">
+                                    <h4 class="card-title"><a href="#!">{{ movie[0] }}</a></h4>
+                                </div>
+                                <div class="card-footer"><large class="text-warning">{{movie[1]}} ★</large></div>
+                                <!-- <div class="card-footer"><large class="text-warning">★ ★ ★ ★ ☆</large></div> -->
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    <div class="row my-4">
                         <h2>Top Rated Movies</h2>
                     </div>
                     <div class="row">
+                        {% for movie in top_movies %}
                         <div class="col-lg-3 col-md-6 mb-4">
                             <div class="card h-100">
-                                <a href="#!"><img class="card-img-top" src="../static/assets/images/shawshank.jpg" alt="..." /></a>
+                                <!-- <a href="#!"><img class="card-img-top" src="../static/assets/images/shawshank.jpg" alt="..." /></a> -->
                                 <div class="card-body">
-                                    <h4 class="card-title"><a href="#!">The Shawshank Redemption</a></h4>
-                                  </div>
-                                <div class="card-footer"><large class="text-warning">★ ★ ★ ★ ☆</large></div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-6 mb-4">
-                            <div class="card h-100">
-                                <a href="#!"><img class="card-img-top" src="../static/assets/images/godfather.jpeg" alt="..." /></a>
-                                <div class="card-body">
-                                    <h4 class="card-title"><a href="#!">The Godfather</a></h4>
+                                    <h4 class="card-title text-light"><a href="#!">{{ movie[0] }}</a></h4>
                                 </div>
-                                <div class="card-footer"><large class="text-warning">★ ★ ★ ★ ☆</large></div>
+                                <div class="card-footer"><large class="text-warning">{{movie[1]}} ★</large></div>
+                                <!-- <div class="card-footer"><large class="text-warning">★ ★ ★ ★ ☆ {{movie[1]}}</large></div> -->
                             </div>
                         </div>
-                        <div class="col-lg-3 col-md-6 mb-4">
-                            <div class="card h-100">
-                                <a href="#!"><img class="card-img-top" src="../static/assets/images/fight_club.jpg" alt="..." /></a>
-                                <div class="card-body">
-                                    <h4 class="card-title"><a href="#!">Fight Club</a></h4>
-                                </div>
-                                <div class="card-footer"><large class="text-warning">★ ★ ★ ★ ☆</large></div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-6 mb-4">
-                            <div class="card h-100">
-                                <a href="#!"><img class="card-img-top" src="../static/assets/images/usual_suspects.jpg" alt="..." /></a>
-                                <div class="card-body">
-                                    <h4 class="card-title"><a href="#!">The Usual Suspects</a></h4>
-                                </div>
-                                <div class="card-footer"><large class="text-warning">★ ★ ★ ★ ☆</large></div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-6 mb-4">
-                            <div class="card h-100">
-                                <a href="#!"><img class="card-img-top" src="../static/assets/images/star_wars_4.jpg" alt="..." /></a>
-                                <div class="card-body">
-                                    <h4 class="card-title"><a href="#!">Star Wars: Episode IV - A New Hope</a></h4>
-                                </div>
-                                <div class="card-footer"><large class="text-warning">★ ★ ★ ★ ☆</large></div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-6 mb-4">
-                            <div class="card h-100">
-                                <a href="#!"><img class="card-img-top" src="../static/assets/images/schindlers_list.jpeg" alt="..." /></a>
-                                <div class="card-body">
-                                    <h4 class="card-title"><a href="#!">Schindler's List</a></h4>
-                                </div>
-                                <div class="card-footer"><large class="text-warning">★ ★ ★ ★ ☆</large></div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-6 mb-4">
-                            <div class="card h-100">
-                                <a href="#!"><img class="card-img-top" src="../static/assets/images/star_wars_5.jpg" alt="..." /></a>
-                                <div class="card-body">
-                                    <h4 class="card-title"><a href="#!">Star Wars: Episode V - Empire Strikes Back</a></h4>
-                                </div>
-                                <div class="card-footer"><large class="text-warning">★ ★ ★ ★ ☆</large></div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-6 mb-4">
-                            <div class="card h-100">
-                                <a href="#!"><img class="card-img-top" src="../static/assets/images/raiders.jpeg" alt="..." /></a>
-                                <div class="card-body">
-                                    <h4 class="card-title"><a href="#!">Raiders of the Lost Ark</a></h4>
-                                </div>
-                                <div class="card-footer"><large class="text-warning">★ ★ ★ ★ ☆</large></div>
-                            </div>
-                        </div>
+                        {% endfor %}
                     </div>
                 </div>
             </div>
