@@ -2,6 +2,7 @@ from flask import Flask, render_template, url_for, request, redirect
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
 from recommendation import movieRecommender, movieSearch
+from db import get_movies
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///recommendation.db'
@@ -24,8 +25,8 @@ class Rating(db.Model):
 
 @app.route('/', methods=['POST', 'GET'])
 def home():
-    
-    return render_template('index.html')
+    top_movies, popular_movies = get_movies()
+    return render_template('index.html', top_movies=top_movies, popular_movies=popular_movies)
 
 @app.route('/search/', methods=['POST', 'GET'])
 def search():
