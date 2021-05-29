@@ -13,7 +13,7 @@
             <div class="text-center">
             {% for m in matches %}
                 <div class="text-center my-5">
-                    <a href={{ url_for('recommendation', movie=m )}}>{{ m }}<a/>
+                    <a class="text-light" href={{ url_for('recommendation', movie=m )}}>{{ m }}<a/>
                 </div>   
             {% endfor %}
         </div>

@@ -20,7 +20,7 @@ def movieRecommender(movie_name):
     if movie_row.empty:
         return 0, 1
     _, indices = model.kneighbors(movie_row,
-                                        n_neighbors=11)
+                                        n_neighbors=9)
     
     movie = movie_features.index[indices.flatten()[0]]
     for i in range(1, 9):
